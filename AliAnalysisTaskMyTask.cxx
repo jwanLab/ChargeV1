@@ -1144,58 +1144,58 @@ void AliAnalysisTaskMyTask::UserExec(Option_t *)
     ResQ->Fill(0.5, (negQ * posQStar).Re());
     if (eta > 0.)
     {
-      px_P->Fill(iTrkpoi, eta, pt * ((u * (TComplex::Conjugate(posQ - u))).Re()));
-      px_T->Fill(iTrkpoi, eta, pt * ((u * negQStar).Re()));
-      v1_p->Fill(iTrkpoi, eta, (u * (TComplex::Conjugate(posQ - u))).Re());
-      v1_t->Fill(iTrkpoi, eta, (u * negQStar).Re());
-      TPCcos_p->Fill(iTrkpoi, eta, cos(phi - ((posQ - u).Theta())));
-      TPCcos_t->Fill(iTrkpoi, eta, cos(phi - (negQ.Theta())));
+      px_P->Fill(iTrkpoi, eta, pt * ((u * (TComplex::Conjugate(posQ - u))).Re()), weight);
+      px_T->Fill(iTrkpoi, eta, pt * ((u * negQStar).Re())), weight;
+      v1_p->Fill(iTrkpoi, eta, (u * (TComplex::Conjugate(posQ - u))).Re(), weight);
+      v1_t->Fill(iTrkpoi, eta, (u * negQStar).Re(), weight);
+      TPCcos_p->Fill(iTrkpoi, eta, cos(phi - ((posQ - u).Theta())), weight);
+      TPCcos_t->Fill(iTrkpoi, eta, cos(phi - (negQ.Theta()))), weight;
 
       if (charge > 0.)
       {
-        px_P->Fill(6.5, eta, pt * ((u * (TComplex::Conjugate(posQ - u))).Re()));
-        px_T->Fill(6.5, eta, pt * ((u * negQStar).Re()));
-        v1_p->Fill(6.5, eta, (u * (TComplex::Conjugate(posQ - u))).Re());
-        v1_t->Fill(6.5, eta, (u * negQStar).Re());
-        TPCcos_p->Fill(6.5, eta, cos(phi - ((posQ - u).Theta())));
-        TPCcos_t->Fill(6.5, eta, cos(phi - (negQ.Theta())));
+        px_P->Fill(6.5, eta, pt * ((u * (TComplex::Conjugate(posQ - u))).Re()), weight);
+        px_T->Fill(6.5, eta, pt * ((u * negQStar).Re()), weight);
+        v1_p->Fill(6.5, eta, (u * (TComplex::Conjugate(posQ - u))).Re(), weight);
+        v1_t->Fill(6.5, eta, (u * negQStar).Re(), weight);
+        TPCcos_p->Fill(6.5, eta, cos(phi - ((posQ - u).Theta())), weight);
+        TPCcos_t->Fill(6.5, eta, cos(phi - (negQ.Theta())), weight);
       }
       else if (charge < 0.)
       {
-        px_P->Fill(7.5, eta, pt * ((u * (TComplex::Conjugate(posQ - u))).Re()));
-        px_T->Fill(7.5, eta, pt * ((u * negQStar).Re()));
-        v1_p->Fill(7.5, eta, (u * (TComplex::Conjugate(posQ - u))).Re());
-        v1_t->Fill(7.5, eta, (u * negQStar).Re());
-        TPCcos_p->Fill(7.5, eta, cos(phi - ((posQ - u).Theta())));
-        TPCcos_t->Fill(7.5, eta, cos(phi - (negQ.Theta())));
+        px_P->Fill(7.5, eta, pt * ((u * (TComplex::Conjugate(posQ - u))).Re()), weight);
+        px_T->Fill(7.5, eta, pt * ((u * negQStar).Re()), weight);
+        v1_p->Fill(7.5, eta, (u * (TComplex::Conjugate(posQ - u))).Re(), weight);
+        v1_t->Fill(7.5, eta, (u * negQStar).Re(), weight);
+        TPCcos_p->Fill(7.5, eta, cos(phi - ((posQ - u).Theta())), weight);
+        TPCcos_t->Fill(7.5, eta, cos(phi - (negQ.Theta())), weight);
       }
     }
     else if (eta < 0.)
     {
-      px_P->Fill(iTrkpoi, eta, pt * ((u * posQStar).Re()));
-      px_T->Fill(iTrkpoi, eta, pt * ((u * (TComplex::Conjugate(negQ - u))).Re()));
-      v1_p->Fill(iTrkpoi, eta, (u * posQStar).Re());
-      v1_t->Fill(iTrkpoi, eta, (u * (TComplex::Conjugate(negQ - u))).Re());
-      TPCcos_p->Fill(iTrkpoi, eta, cos(phi - (posQ.Theta())));
-      TPCcos_t->Fill(iTrkpoi, eta, cos(phi - ((negQ - u).Theta())));
+      px_P->Fill(iTrkpoi, eta, pt * ((u * posQStar).Re()), weight);
+      px_T->Fill(iTrkpoi, eta, pt * ((u * (TComplex::Conjugate(negQ - u))).Re()), weight);
+      v1_p->Fill(iTrkpoi, eta, (u * posQStar).Re(), weight);
+      v1_t->Fill(iTrkpoi, eta, (u * (TComplex::Conjugate(negQ - u))).Re(), weight);
+      TPCcos_p->Fill(iTrkpoi, eta, cos(phi - (posQ.Theta())), weight);
+      TPCcos_t->Fill(iTrkpoi, eta, cos(phi - ((negQ - u).Theta())), weight);
 
       if (charge > 0.)
       {
-        px_P->Fill(6.5, eta, pt * ((u * posQStar).Re()));
-        px_T->Fill(6.5, eta, pt * ((u * (TComplex::Conjugate(negQ - u))).Re()));
-        v1_p->Fill(6.5, eta, (u * posQStar).Re());
-        v1_t->Fill(6.5, eta, (u * (TComplex::Conjugate(negQ - u))).Re());
-        TPCcos_p->Fill(6.5, eta, cos(phi - (posQ.Theta())));
-        TPCcos_t->Fill(6.5, eta, cos(phi - ((negQ - u).Theta())));
+        px_P->Fill(6.5, eta, pt * ((u * posQStar).Re()), weight);
+        px_T->Fill(6.5, eta, pt * ((u * (TComplex::Conjugate(negQ - u))).Re()), weight);
+        v1_p->Fill(6.5, eta, (u * posQStar).Re(), weight);
+        v1_t->Fill(6.5, eta, (u * (TComplex::Conjugate(negQ - u))).Re(), weight);
+        TPCcos_p->Fill(6.5, eta, cos(phi - (posQ.Theta())), weight);
+        TPCcos_t->Fill(6.5, eta, cos(phi - ((negQ - u).Theta())), weight);
       }
       else if (charge < 0.)
       {
-        px_P->Fill(7.5, eta, pt * ((u * posQStar).Re()));
-        px_T->Fill(7.5, eta, pt * ((u * (TComplex::Conjugate(negQ - u))).Re()));
-        v1_p->Fill(7.5, eta, (u * posQStar).Re());
-        v1_t->Fill(7.5, eta, (u * (TComplex::Conjugate(negQ - u))).Re());
-        TPCcos_p->Fill(7.5, eta, cos(phi - (posQ.Theta())));
-        TPCcos_t->Fill(7.5, eta, cos(phi - ((negQ - u).Theta())));
+        px_P->Fill(7.5, eta, pt * ((u * posQStar).Re()), weight);
+        px_T->Fill(7.5, eta, pt * ((u * (TComplex::Conjugate(negQ - u))).Re()), weight);
+        v1_p->Fill(7.5, eta, (u * posQStar).Re(), weight);
+        v1_t->Fill(7.5, eta, (u * (TComplex::Conjugate(negQ - u))).Re(), weight);
+        TPCcos_p->Fill(7.5, eta, cos(phi - (posQ.Theta())), weight);
+        TPCcos_t->Fill(7.5, eta, cos(phi - ((negQ - u).Theta())), weight);
       }
     }
 
@@ -1204,50 +1204,50 @@ void AliAnalysisTaskMyTask::UserExec(Option_t *)
     TComplex ZDCQp(Qpx, Qpy);
     ZDCResQ->Fill(0.5, (ZDCQt * TComplex::Conjugate(ZDCQp)).Re());
 
-    ZDCpx_P->Fill(iTrkpoi, eta, pt * ((u * TComplex::Conjugate(ZDCQp)).Re()));
-    ZDCpx_T->Fill(iTrkpoi, eta, pt * ((u * TComplex::Conjugate(ZDCQt)).Re()));
-    ZDCv1_p->Fill(iTrkpoi, eta, (u * TComplex::Conjugate(ZDCQp)).Re());
-    ZDCv1_t->Fill(iTrkpoi, eta, (u * TComplex::Conjugate(ZDCQt)).Re());
-    ZDCcos_t->Fill(iTrkpoi, eta, cos(phi - fPsi1ZNC));
-    ZDCcos_p->Fill(iTrkpoi, eta, cos(phi - fPsi1ZNA));
+    ZDCpx_P->Fill(iTrkpoi, eta, pt * ((u * TComplex::Conjugate(ZDCQp)).Re()), weight);
+    ZDCpx_T->Fill(iTrkpoi, eta, pt * ((u * TComplex::Conjugate(ZDCQt)).Re()), weight);
+    ZDCv1_p->Fill(iTrkpoi, eta, (u * TComplex::Conjugate(ZDCQp)).Re(), weight);
+    ZDCv1_t->Fill(iTrkpoi, eta, (u * TComplex::Conjugate(ZDCQt)).Re(), weight);
+    ZDCcos_t->Fill(iTrkpoi, eta, cos(phi - fPsi1ZNC), weight);
+    ZDCcos_p->Fill(iTrkpoi, eta, cos(phi - fPsi1ZNA), weight);
 
     if (charge > 0.)
     {
-      ZDCpx_P->Fill(6.5, eta, pt * ((u * TComplex::Conjugate(ZDCQp)).Re()));
-      ZDCpx_T->Fill(6.5, eta, pt * ((u * TComplex::Conjugate(ZDCQt)).Re()));
-      ZDCv1_p->Fill(6.5, eta, (u * TComplex::Conjugate(ZDCQp)).Re());
-      ZDCv1_t->Fill(6.5, eta, (u * TComplex::Conjugate(ZDCQt)).Re());
-      ZDCcos_t->Fill(6.5, eta, cos(phi - fPsi1ZNC));
-      ZDCcos_p->Fill(6.5, eta, cos(phi - fPsi1ZNA));
+      ZDCpx_P->Fill(6.5, eta, pt * ((u * TComplex::Conjugate(ZDCQp)).Re()), weight);
+      ZDCpx_T->Fill(6.5, eta, pt * ((u * TComplex::Conjugate(ZDCQt)).Re()), weight);
+      ZDCv1_p->Fill(6.5, eta, (u * TComplex::Conjugate(ZDCQp)).Re(), weight);
+      ZDCv1_t->Fill(6.5, eta, (u * TComplex::Conjugate(ZDCQt)).Re(), weight);
+      ZDCcos_t->Fill(6.5, eta, cos(phi - fPsi1ZNC), weight);
+      ZDCcos_p->Fill(6.5, eta, cos(phi - fPsi1ZNA), weight);
     }
     else if (charge < 0.)
     {
-      ZDCpx_P->Fill(7.5, eta, pt * ((u * TComplex::Conjugate(ZDCQp)).Re()));
-      ZDCpx_T->Fill(7.5, eta, pt * ((u * TComplex::Conjugate(ZDCQt)).Re()));
-      ZDCv1_p->Fill(7.5, eta, (u * TComplex::Conjugate(ZDCQp)).Re());
-      ZDCv1_t->Fill(7.5, eta, (u * TComplex::Conjugate(ZDCQt)).Re());
-      ZDCcos_t->Fill(7.5, eta, cos(phi - fPsi1ZNC));
-      ZDCcos_p->Fill(7.5, eta, cos(phi - fPsi1ZNA));
+      ZDCpx_P->Fill(7.5, eta, pt * ((u * TComplex::Conjugate(ZDCQp)).Re()), weight);
+      ZDCpx_T->Fill(7.5, eta, pt * ((u * TComplex::Conjugate(ZDCQt)).Re()), weight);
+      ZDCv1_p->Fill(7.5, eta, (u * TComplex::Conjugate(ZDCQp)).Re(), weight);
+      ZDCv1_t->Fill(7.5, eta, (u * TComplex::Conjugate(ZDCQt)).Re(), weight);
+      ZDCcos_t->Fill(7.5, eta, cos(phi - fPsi1ZNC), weight);
+      ZDCcos_p->Fill(7.5, eta, cos(phi - fPsi1ZNA), weight);
     }
 
     // qc
-    hMQ_thisEvt->Fill(pt, eta);
-    hReQ_thisEvt->Fill(pt, eta, cos(phi));
-    hImQ_thisEvt->Fill(pt, eta, sin(phi));
-    hMp_thisEvt->Fill(iTrkpoi, pt, eta);
-    hRep_thisEvt->Fill(iTrkpoi, pt, eta, cos(phi));
-    hImp_thisEvt->Fill(iTrkpoi, pt, eta, sin(phi));
+    hMQ_thisEvt->Fill(pt, eta, weight);
+    hReQ_thisEvt->Fill(pt, eta, weight*cos(phi));
+    hImQ_thisEvt->Fill(pt, eta, weight*sin(phi));
+    hMp_thisEvt->Fill(iTrkpoi, pt, eta, weight);
+    hRep_thisEvt->Fill(iTrkpoi, pt, eta, weight*cos(phi));
+    hImp_thisEvt->Fill(iTrkpoi, pt, eta, weight*sin(phi));
     if (charge > 0.)
     {
-      hMp_thisEvt->Fill(6.5, pt, eta);
-      hRep_thisEvt->Fill(6.5, pt, eta, cos(phi));
-      hImp_thisEvt->Fill(6.5, pt, eta, sin(phi));
+      hMp_thisEvt->Fill(6.5, pt, eta, weight);
+      hRep_thisEvt->Fill(6.5, pt, eta, weight*cos(phi));
+      hImp_thisEvt->Fill(6.5, pt, eta, weight*sin(phi));
     }
     else if (charge < 0.)
     {
-      hMp_thisEvt->Fill(7.5, pt, eta);
-      hRep_thisEvt->Fill(7.5, pt, eta, cos(phi));
-      hImp_thisEvt->Fill(7.5, pt, eta, sin(phi));
+      hMp_thisEvt->Fill(7.5, pt, eta, weight);
+      hRep_thisEvt->Fill(7.5, pt, eta, weight*cos(phi));
+      hImp_thisEvt->Fill(7.5, pt, eta, weight*sin(phi));
     }
   }
   // for d2
